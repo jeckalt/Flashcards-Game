@@ -24,7 +24,7 @@ void question()
     int ansCount = 1;
     int wrongAns = 0;
 
-    while(ansCount < 6)
+    while(ansCount < 50)
     {
         srand ( time(NULL) );
         int op = rand() % 4;
@@ -48,7 +48,7 @@ void question()
                 std::cout << "Incorrect. # of incorrect answers " << wrongAns << ". Correct answer: " << ans << std::endl;
                 wrongAns++;
             }
-            if(wrongAns == 3)
+            if(wrongAns == 10)
             {
                 std::cout << "Too many incorrect guesses!" << std::endl;
                 break;
