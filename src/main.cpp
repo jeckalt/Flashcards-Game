@@ -27,28 +27,82 @@ void question()
     while(ansCount < 6)
     {
         srand ( time(NULL) );
-        int q1 = rand() % 100;
-        int q2 = rand() % 100;
+        int op = rand() % 4;
 
-        ans = q1 + q2;
-
-        std::cout << q1 << " + " << q2 << " = ?" << std::endl;
-        std::cin >> usrAns;
-
-        if (usrAns == ans)
+        if(op == 0)
         {
-            std::cout << "Correct! # of correct answers " << ansCount << std::endl;
-            ansCount++;
+            int q1 = rand() % 20 + 1;
+            int q2 = rand() % 20 + 1;
+            ans = q1 + q2;
+
+            std::cout << q1 << " + " << q2 << " = ?" << std::endl;
+            std::cin >> usrAns;
+
+            if (usrAns == ans)
+            {
+                std::cout << "Correct! # of correct answers " << ansCount << std::endl;
+                ansCount++;
+            }
+            else
+            {
+                std::cout << "Incorrect. # of incorrect answers " << wrongAns << ". Correct answer: " << ans << std::endl;
+                wrongAns++;
+            }
+            if(wrongAns == 3)
+            {
+                std::cout << "Too many incorrect guesses!" << std::endl;
+                break;
+            }    
+        }
+        else if (op == 2)
+        {   
+            int q1 = rand() % 20 + 1;
+            int q2 = rand() % 20 + 1;
+            ans = q1 - q2;
+
+            std::cout << q1 << " - " << q2 << " = ?" << std::endl;
+            std::cin >> usrAns;
+
+            if (usrAns == ans)
+            {
+                std::cout << "Correct! # of correct answers " << ansCount << std::endl;
+                ansCount++;
+            }
+            else
+            {
+                std::cout << "Incorrect. # of incorrect answers " << wrongAns << ". Correct answer: " << ans << std::endl;
+                wrongAns++;
+            }
+            if(wrongAns == 3)
+            {
+                std::cout << "Too many incorrect guesses!" << std::endl;
+                break;
+            }    
         }
         else
-        {
-            std::cout << "Incorrect. # of incorrect answers " << wrongAns << ". Correct answer: " << ans << std::endl;
-            wrongAns++;
-        }
-        if(wrongAns == 3)
-        {
-            std::cout << "Too many incorrect guesses!" << std::endl;
-            break;
-        }
-    }
+        {           
+            int q1 = rand() % 10 + 1;
+            int q2 = rand() % 10 + 1;
+            ans = q1 * q2;
+
+            std::cout << q1 << " * " << q2 << " = ?" << std::endl;
+            std::cin >> usrAns;
+
+            if (usrAns == ans)
+            {
+                std::cout << "Correct! # of correct answers " << ansCount << std::endl;
+                ansCount++;
+            }
+            else
+            {
+                std::cout << "Incorrect. # of incorrect answers " << wrongAns << ". Correct answer: " << ans << std::endl;
+                wrongAns++;
+            }
+            if(wrongAns == 3)
+            {
+                std::cout << "Too many incorrect guesses!" << std::endl;
+                break;
+            }    
+        }    
+    }        
 }
