@@ -4,8 +4,20 @@
 void question();
 
 int main()
-{  
-    char playAgain; 
+{   
+    char prompt;    
+    std::cout << "Hello, Welcome to Flashcards" << std::endl;  
+    char playAgain;
+
+    std::cout << "Type 'q' to see FAQ, or type any other single character to begin." << std::endl;
+    std::cin >> prompt;
+
+    if (tolower(prompt) == 'q')
+    {
+        std::cout << "Why is there no Division?\n   There is no division because its too complicated to implement(also annoying)\n\nWhat if the answer I have is negative?\n  Just type your answer with a - in front of it." << std::endl;
+    }
+
+        std::cout << "Starting...\n" << std::endl; 
         question();
         std::cout << "Do you want to play again?[y/n]" << std::endl;
         std::cin >> playAgain;
@@ -58,6 +70,7 @@ void question()
         {   
             int q1 = rand() % 20 + 1;
             int q2 = rand() % 20 + 1;
+
             ans = q1 - q2;
 
             std::cout << q1 << " - " << q2 << " = ?" << std::endl;
