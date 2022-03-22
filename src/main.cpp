@@ -14,7 +14,7 @@ int main()
 
     if (tolower(prompt) == 'q')
     {
-        std::cout << "Why is there no Division?\n   There is no division because its too complicated to implement(also annoying)\n\nWhat if the answer I have is negative?\n  Just type your answer with a - in front of it." << std::endl;
+        std::cout << "Why is there no Division?\n   There is no division because its too complicated to implement(also annoying)\n\nWhat if the answer I have is negative?\n  Just type your answer with a \"-\" in front of it." << std::endl;
     }
 
         std::cout << "Starting...\n" << std::endl; 
